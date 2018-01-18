@@ -1,0 +1,10 @@
+International_Standard_Book_Number -> 0.048084707417916164
+Digital_object_identifier -> 0.039661447269776
+International_Standard_Serial_Number -> 0.03129729259893134
+National_Diet_Library -> 0.02179021828054005
+Bibcode -> 0.018555155952812975
+PubMed_Identifier -> 0.014956005126973287
+World_War_II -> 0.01482612590007817
+Canada -> 0.014505936844105076
+OCLC -> 0.013175277442058748
+Japan -> 0.012997931248806513

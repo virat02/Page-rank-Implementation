@@ -1,0 +1,16 @@
+Current Perplexity value: 602 Previous Perplexity value: 999 Difference(Previous - Current): 397 
+Current Perplexity value: 546 Previous Perplexity value: 602 Difference(Previous - Current): 55 
+Current Perplexity value: 498 Previous Perplexity value: 546 Difference(Previous - Current): 48 
+Current Perplexity value: 468 Previous Perplexity value: 498 Difference(Previous - Current): 30 
+Current Perplexity value: 449 Previous Perplexity value: 468 Difference(Previous - Current): 19 
+Current Perplexity value: 435 Previous Perplexity value: 449 Difference(Previous - Current): 13 
+Current Perplexity value: 426 Previous Perplexity value: 435 Difference(Previous - Current): 9 
+Current Perplexity value: 420 Previous Perplexity value: 426 Difference(Previous - Current): 6 
+Current Perplexity value: 415 Previous Perplexity value: 420 Difference(Previous - Current): 4 
+Current Perplexity value: 412 Previous Perplexity value: 415 Difference(Previous - Current): 2 
+Current Perplexity value: 410 Previous Perplexity value: 412 Difference(Previous - Current): 1 
+Current Perplexity value: 409 Previous Perplexity value: 410 Difference(Previous - Current): 1 
+Current Perplexity value: 408 Previous Perplexity value: 409 Difference(Previous - Current): 0 
+Current Perplexity value: 408 Previous Perplexity value: 408 Difference(Previous - Current): 0 
+Current Perplexity value: 407 Previous Perplexity value: 408 Difference(Previous - Current): 0 
+Current Perplexity value: 407 Previous Perplexity value: 407 Difference(Previous - Current): 0 

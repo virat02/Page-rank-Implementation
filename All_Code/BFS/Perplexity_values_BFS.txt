@@ -1,0 +1,4 @@
+Current Perplexity value: 602 Previous Perplexity value: 999 Difference(Current - Previous): -397 
+Current Perplexity value: 547 Previous Perplexity value: 602 Difference(Current - Previous): -55 
+Current Perplexity value: 499 Previous Perplexity value: 547 Difference(Current - Previous): -47 
+Current Perplexity value: 469 Previous Perplexity value: 499 Difference(Current - Previous): -29 

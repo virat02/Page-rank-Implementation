@@ -1,0 +1,10 @@
+International_Standard_Book_Number -> 0.06408613520997199
+Digital_object_identifier -> 0.046917131202960295
+International_Standard_Serial_Number -> 0.03890618768708513
+National_Diet_Library -> 0.028984954206375625
+OCLC -> 0.020300688371106716
+Bibcode -> 0.01793405953002906
+World_War_II -> 0.01731272336348521
+Japan -> 0.014853399577132047
+Wayback_Machine -> 0.012487872344652111
+Nature_(journal) -> 0.008363142287037212

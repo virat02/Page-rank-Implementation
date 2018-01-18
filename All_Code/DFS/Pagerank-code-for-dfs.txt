@@ -1,0 +1,124 @@
+import math
+import pickle
+from collections import OrderedDict
+M = {}
+L = {}
+S = []
+with open("urlsCrawledDFSInlinkGraph-encoded.txt", 'rb') as f:
+    M = pickle.loads(f.read())
+
+N = len(M.keys())
+set_of_pages =  M.keys()
+
+with open("urlsCrawledDFSOutlinkGraph-encoded.txt", 'rb') as f:
+    L = pickle.loads(f.read())
+
+for x,y in L.items():
+    if y == []:
+        S.append(x)
+
+d = 0.85
+page_rank = {}
+newPR = 0
+s = 0
+convergence_list = []
+
+def perplexity(p):
+    entropy = 0
+    for page in set_of_pages:
+        entropy += p[page] * math.log2(p[page])
+    entropy = entropy * -1
+    current_perplexity = math.pow(2,entropy)
+    return current_perplexity
+
+def PageRank (M,L,d):
+    global newPR
+    i = 0
+    init_page_rank = {page: (1/N) for page in set_of_pages}
+    prev_perplexity = perplexity(init_page_rank)
+    f = open('Perplexity-values-DFS.txt', 'w')
+    while sum(convergence_list[-4:]) < 4:
+        sinkPR = 0
+        for page in S:
+            sinkPR += init_page_rank[page]
+        for page in set_of_pages:
+            newPR = (1-d)/N + d * (sinkPR/N)
+            for q in M[page]:
+                newPR += d * init_page_rank[q] / (len(L[q]))
+            page_rank[page] = newPR
+        current_perplexity = perplexity(page_rank)
+        if (current_perplexity - prev_perplexity) < 1:
+            convergence_list.append(1)
+        else:
+            convergence_list.append(0)
+        difference = current_perplexity - prev_perplexity
+
+        f.write("Current Perplexity value: %d " %current_perplexity)
+        f.write("Previous Perplexity value: %d " %prev_perplexity)
+        f.write("Difference(Current - Previous): %d \n" %difference)
+
+        prev_perplexity = current_perplexity
+        init_page_rank = page_rank.copy()
+        i += 1
+    f.close()
+    return page_rank
+
+PageRank(M,L,0.85)
+print(page_rank)
+
+page_ranks = dict((k,float(v)) for k,v in page_rank.items())
+
+for key,value in page_ranks.items():
+    s+=value
+
+f=open('All_Pageranks_for_DFS.txt','w')
+for keys,values in sorted(page_ranks.items(), key=lambda x: x[1], reverse=True):
+    f.write("\n {0} -> {1}" .format(keys,values))
+f.write("\n\nSum of PageRanks = %s" %s)
+f.close()
+
+top_50 = []
+f=open('All_Pageranks_for_DFS.txt','r')
+top_50 = f.readlines()
+top_50=[x.strip() for x in top_50]
+f.close()
+
+del top_50[0]
+
+f=open('Top_50_Pagerank_through_DFS.txt','w')
+for i in range(0,50):
+    f.write('%s\n' %top_50[i])
+f.close()
+
+f=open('Top_10_Pagerank_through_DFS.txt','w')
+for i in range(0,10):
+    f.write('%s\n' %top_50[i])
+f.close()
+
+ordered_d = {}
+f=open('Top_10_Inlink_Counts_for_DFS.txt','w')
+ordered_d = OrderedDict(sorted(M.items(), key=lambda x: len(x[1]),reverse=True))
+
+topkeys=[]
+topvalues=[]
+
+for k,v in ordered_d.items():
+    topkeys.append(k)
+    topvalues.append(v)
+
+for i in range(0,10):
+    f.write("%s -> "%topkeys[i])
+    f.write("%s\n "%topvalues[i])
+f.close()
+
+f = open("Sources(No-Inlinks)_DFS", 'w')
+for i in M:
+    if (M[i] == []):
+       f.write("Sources: %s\n" %M[i])
+f.close()
+
+f = open("Sinks(No-Outlinks)_DFS", 'w')
+for i in L:
+    if (L[i] == []):
+       f.write("Sinks: %s\n" %i)
+f.close()

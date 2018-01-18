@@ -1,0 +1,9 @@
+No. of sinks for G1 :         68
+No. of sources for G1 :       0
+Proportion of sinks for G1 :  0.068
+Proportion of sources for G1: 0.00
+
+No. of sinks for G2:          82
+No. of sources for G2:        0
+Proportion of sinks for G1 :  0.082
+Proportion of sources for G1: 0.00

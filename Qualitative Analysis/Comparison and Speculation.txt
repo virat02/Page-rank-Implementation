@@ -1,0 +1,12 @@
+Reasons for these pages to have high pagerank values:
+1) Higher pagerank for a page is directly proportional to the number of in-links to that page. 
+   After comparing the top 10 pages found by in-link counts and pagerank respectively, we find that 5 pages are common.
+   In other words, these five pages in the "top 10 in-link counts" also have highest pagerank values, 
+   thereby proving the direct proportionality between a page rank value and the in-link count.
+   
+2) On observing the in-link graph, we find that most of the pages are an in-link to the pages above them, when sorted on basis of pagerank.
+   For example, pagerank of "International_Standard_Book_Number" is greater than "Digital_object_identifier". Also,
+   "Digital_object_identifier" is an in-link to "International_Standard_Book_Number". In other words, a page having a high pagerank value,
+   when an in-link to some page, thereby increases the value of that page and hence, that page rightfully should have a higher pagerank value.
+   This observation is proven in our case because pagerank value for "International_Standard_Book_Number" is 0.0641 which is greater than that of 
+   "Digital_object_identifier", which has a pagerank value of 0.047
